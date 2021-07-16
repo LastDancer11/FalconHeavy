@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

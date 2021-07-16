@@ -9,7 +9,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="sby-CV-I2j">
             <objects>
-                <tabBarController id="PyP-zL-spz" customClass="TabBarController" customModule="BlogReader" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="PyP-zL-spz" customClass="TabBarController" customModule="BlogReader" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KU3-wE-UMZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

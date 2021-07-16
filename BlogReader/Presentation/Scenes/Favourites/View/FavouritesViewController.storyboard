@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favourites View Controller-->
+        <!--Favourites-->
         <scene sceneID="yTc-WK-mqt">
             <objects>
                 <viewController storyboardIdentifier="FavouritesViewController" id="vWc-dh-2n5" customClass="FavouritesViewController" customModule="BlogReader" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,6 +18,8 @@
                         <viewLayoutGuide key="safeArea" id="jE9-UJ-nvq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Favourites" image="star" catalog="system" id="e5f-4U-BTq"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Goc-OI-UJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -25,6 +27,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

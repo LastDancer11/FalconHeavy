@@ -14,7 +14,18 @@ class TabBarController: UITabBarController, Storyboarded, CoordinatorDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let vc1 = self.viewControllers![0] as! HomeViewController
+        vc1.coordinator = coordinator
+        
+        let vc2 = self.viewControllers![1] as! FavouritesViewController
+        vc2.coordinator = coordinator
+        
+        let vc3 = self.viewControllers![2] as! NewsViewController
+        vc3.coordinator = coordinator
+        
+        let vc4 = self.viewControllers![3] as! FeedViewController
+        vc4.coordinator = coordinator
+        
     }
     
 

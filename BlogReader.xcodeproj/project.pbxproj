@@ -10,7 +10,6 @@
 		847C1F8926A1F75400C04644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C1F8826A1F75400C04644 /* AppDelegate.swift */; };
 		847C1F8B26A1F75400C04644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C1F8A26A1F75400C04644 /* SceneDelegate.swift */; };
 		847C1F8D26A1F75400C04644 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C1F8C26A1F75400C04644 /* HomeViewController.swift */; };
-		847C1F9026A1F75400C04644 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847C1F8E26A1F75400C04644 /* HomeViewController.storyboard */; };
 		847C1F9226A1F75B00C04644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847C1F9126A1F75B00C04644 /* Assets.xcassets */; };
 		847C1F9526A1F75B00C04644 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847C1F9326A1F75B00C04644 /* LaunchScreen.storyboard */; };
 		847C1FA926A1FA1200C04644 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C1FA826A1FA1200C04644 /* AppCoordinator.swift */; };
@@ -26,6 +25,7 @@
 		847C1FCC26A1FE1400C04644 /* NewsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847C1FCB26A1FE1400C04644 /* NewsViewController.storyboard */; };
 		847C1FCF26A1FE2100C04644 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C1FCE26A1FE2100C04644 /* FeedViewController.swift */; };
 		847C1FD326A1FFCD00C04644 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847C1FD226A1FFCD00C04644 /* FeedViewController.storyboard */; };
+		847C1FDC26A20BBE00C04644 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847C1FDB26A20BBE00C04644 /* HomeViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,6 @@
 		847C1F8826A1F75400C04644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847C1F8A26A1F75400C04644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		847C1F8C26A1F75400C04644 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "../New Group/HomeViewController.swift"; sourceTree = "<group>"; };
-		847C1F8F26A1F75400C04644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeViewController.storyboard; sourceTree = "<group>"; };
 		847C1F9126A1F75B00C04644 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		847C1F9426A1F75B00C04644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		847C1F9626A1F75B00C04644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		847C1FCB26A1FE1400C04644 /* NewsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsViewController.storyboard; sourceTree = "<group>"; };
 		847C1FCE26A1FE2100C04644 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		847C1FD226A1FFCD00C04644 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
+		847C1FDB26A20BBE00C04644 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +111,8 @@
 		847C1FA126A1F86300C04644 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				847C1FB426A1FB1600C04644 /* TabBar */,
 				847C1FA726A1F90200C04644 /* Base */,
+				847C1FB426A1FB1600C04644 /* TabBar */,
 				847C1FA226A1F87200C04644 /* Home */,
 				847C1FBF26A1FD0100C04644 /* Favourites */,
 				847C1FC326A1FDA900C04644 /* News */,
@@ -218,8 +218,8 @@
 		847C1FD626A201F100C04644 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				847C1F8E26A1F75400C04644 /* HomeViewController.storyboard */,
 				847C1F8C26A1F75400C04644 /* HomeViewController.swift */,
+				847C1FDB26A20BBE00C04644 /* HomeViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,11 +301,11 @@
 			files = (
 				847C1FC626A1FDD200C04644 /* FavouritesViewController.storyboard in Resources */,
 				847C1FD326A1FFCD00C04644 /* FeedViewController.storyboard in Resources */,
+				847C1FDC26A20BBE00C04644 /* HomeViewController.storyboard in Resources */,
 				847C1F9526A1F75B00C04644 /* LaunchScreen.storyboard in Resources */,
 				847C1FCC26A1FE1400C04644 /* NewsViewController.storyboard in Resources */,
 				847C1F9226A1F75B00C04644 /* Assets.xcassets in Resources */,
 				847C1FB926A1FB9B00C04644 /* TabBarController.storyboard in Resources */,
-				847C1F9026A1F75400C04644 /* HomeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,14 +334,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		847C1F8E26A1F75400C04644 /* HomeViewController.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				847C1F8F26A1F75400C04644 /* Base */,
-			);
-			name = HomeViewController.storyboard;
-			sourceTree = "<group>";
-		};
 		847C1F9326A1F75B00C04644 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
