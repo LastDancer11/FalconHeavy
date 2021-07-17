@@ -13,17 +13,17 @@ protocol FavouritesViewModelProtocol {
     
     func fetchFavourites(completion: @escaping ((Result<[FavouriteModel], Error>) -> Void))
 
-    var favouriteManager: FavouritesManagerProtocol { get }
+    var favouriteManager: FavouriteManagerProtocol { get }
     
-    init(favouriteManager: FavouritesManagerProtocol)
+    init(favouriteManager: FavouriteManagerProtocol)
     
 }
 
 final class FavouritesViewModel: FavouritesViewModelProtocol {
    
-    private(set) var favouriteManager: FavouritesManagerProtocol
+    private(set) var favouriteManager: FavouriteManagerProtocol
         
-    init(favouriteManager: FavouritesManagerProtocol) {
+    init(favouriteManager: FavouriteManagerProtocol) {
         self.favouriteManager = favouriteManager
     }
     

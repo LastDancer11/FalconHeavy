@@ -14,7 +14,7 @@ class FavouritesViewController: BaseViewController {
 
     private var dataSource: FavouritesCollectionViewDataSource!
     private var viewModel:  FavouritesViewModelProtocol!
-    private var favouritesManager: FavouritesManagerProtocol!
+    private var favouritesManager: FavouriteManagerProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class FavouritesViewController: BaseViewController {
     }
         
     private func configureViewModel() {
-        favouritesManager = FavouritesManager()
+        favouritesManager = FavouriteManager()
         viewModel = FavouritesViewModel(favouriteManager: favouritesManager)
         dataSource = FavouritesCollectionViewDataSource(with: collectionView, viewModel: viewModel)
         dataSource.refresh()
