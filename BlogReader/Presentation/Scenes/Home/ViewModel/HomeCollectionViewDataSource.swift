@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeDataSource: BaseCollectionViewDataSource {
+final class HomeCollectionViewDataSource: BaseCollectionViewDataSource {
     
     // MARK: - Variables
     private var viewModel: HomeViewModelProtocol!
@@ -17,21 +17,23 @@ final class HomeDataSource: BaseCollectionViewDataSource {
         
         self.collectionView = collectionView
         
-        multiSectionModels = []
+        singleSectionModels = []
     }
     
     // MARK: - Table View Setuper
-    override func refresh() {
-        multiSectionModels = [[], []]
+    func refreshCategoryItems() {
         
-        for _ in 0...4 {
-            multiSectionModels[0].append(categoryCell)
+        for _ in 0...5 {
+            singleSectionModels.append(categoryItemCell)
         }
         
-        for _ in 0...3 {
-            multiSectionModels[1].append(storyCell)
+        collectionView?.reloadData()
+    }
+    
+    func refreshStoryCellItems() {
+        for _ in 0...5 {
+            singleSectionModels.append(storyItemCell)
         }
-      
         
         collectionView?.reloadData()
     }
@@ -73,13 +75,13 @@ final class HomeDataSource: BaseCollectionViewDataSource {
 }
 
 // MARK: - Cell Registration
-private extension HomeDataSource {
+private extension HomeCollectionViewDataSource {
     
-    private var categoryCell: CellViewModel {
+    private var categoryItemCell: CellViewModel {
         return CellViewModel(cellIdentifier: CategoryItemCell.identifier)
     }
     
-    private var storyCell: CellViewModel {
+    private var storyItemCell: CellViewModel {
         return CellViewModel(cellIdentifier: StoryItemCell.identifier)
     }
     
@@ -91,12 +93,6 @@ private extension HomeDataSource {
 }
 
 // MARk - UITableView Delegate
-extension HomeDataSource: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == 1 {
-           return CGSize(width: 342, height: 218)
-        }
-        
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-    }
+extension HomeCollectionViewDataSource: UICollectionViewDelegateFlowLayout {
+   
 }

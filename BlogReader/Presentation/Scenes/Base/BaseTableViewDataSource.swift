@@ -53,7 +53,10 @@ extension BaseTableViewDataSource: UITableViewDataSource {
         
         
         switch cellViewModel.cellIdentifier {
-        
+        case CategoryCell.identifier:
+            cell = tableView.deque(CategoryCell.self, for: indexPath)
+        case StoryCell.identifier:
+            cell = tableView.deque(StoryCell.self, for: indexPath)
         default:
             if let _cell = initCustomTableViewCell(for: indexPath, with: cellViewModel.cellIdentifier) {
                 cell = _cell

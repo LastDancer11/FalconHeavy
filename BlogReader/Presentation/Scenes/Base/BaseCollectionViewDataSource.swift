@@ -56,8 +56,8 @@ extension BaseCollectionViewDataSource: UICollectionViewDataSource {
             cell = collectionView.deque(StoryItemCell.self, for: indexPath)
         case FavouriteCategoryItemCell.identifier:
             cell = collectionView.deque(FavouriteCategoryItemCell.self, for: indexPath)
-        case FavouriteCell.identifier:
-            cell = collectionView.deque(FavouriteCell.self, for: indexPath)
+        case FavouriteItemCell.identifier:
+            cell = collectionView.deque(FavouriteItemCell.self, for: indexPath)
         default:
             if let _cell = initCustomCollectionViewCell(for: indexPath, with: cellViewModel.cellIdentifier) {
                 cell = _cell

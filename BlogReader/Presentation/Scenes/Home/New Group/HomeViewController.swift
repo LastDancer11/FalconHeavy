@@ -9,22 +9,22 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
-    private var dataSource: HomeDataSource!
+    private var dataSource: HomeTableViewDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.registerNib(class: CategoryItemCell.self)
-        collectionView.registerNib(class: StoryItemCell.self)
+        tableView.registerNib(class: CategoryCell.self)
+        tableView.registerNib(class: StoryCell.self)
         
         configureDataSource()
         
     }
     
     private func configureDataSource() {
-        dataSource = HomeDataSource(with: collectionView)
+        dataSource = HomeTableViewDataSource(with: tableView)
         dataSource.refresh()
     }
 

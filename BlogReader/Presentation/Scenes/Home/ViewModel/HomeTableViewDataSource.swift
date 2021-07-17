@@ -1,5 +1,5 @@
 //
-//  FavouritesDataSource.swift
+//  HomeTableViewDataSource.swift
 //  BlogReader
 //
 //  Created by Admin on 17.07.2021.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-final class FavouritesDataSource: BaseCollectionViewDataSource {
+final class HomeTableViewDataSource: BaseTableViewDataSource {
     
     // MARK: - Variables
-    private var viewModel: FavouritesViewModelProtocol!
+    private var viewModel: HomeViewModelProtocol!
     
-    init(with collectionView: UICollectionView) {
+    init(with tableView: UITableView) {
         super.init()
         
-        self.collectionView = collectionView
+        self.tableView = tableView
         
         multiSectionModels = []
     }
@@ -24,16 +24,14 @@ final class FavouritesDataSource: BaseCollectionViewDataSource {
     override func refresh() {
         multiSectionModels = [[], []]
         
-        for _ in 0...4 {
-            multiSectionModels[0].append(favouriteCategoryCell)
-        }
         
-        for _ in 0...3 {
-            multiSectionModels[1].append(favouriteCell)
-        }
+        multiSectionModels[0].append(categoryCell)
+        
+        multiSectionModels[1].append(storyCell)
+        
       
         
-        collectionView?.reloadData()
+        tableView?.reloadData()
     }
     
     // MARK: - Collection View Setupers
@@ -73,32 +71,19 @@ final class FavouritesDataSource: BaseCollectionViewDataSource {
 }
 
 // MARK: - Cell Registration
-private extension FavouritesDataSource {
+private extension HomeTableViewDataSource {
     
-    private var favouriteCategoryCell: CellViewModel {
-        return CellViewModel(cellIdentifier: FavouriteCategoryItemCell.identifier)
+    private var categoryCell: CellViewModel {
+        return CellViewModel(cellIdentifier: CategoryCell.identifier)
     }
     
-    private var favouriteCell: CellViewModel {
-        return CellViewModel(cellIdentifier: FavouriteCell.identifier)
+    private var storyCell: CellViewModel {
+        return CellViewModel(cellIdentifier: StoryCell.identifier)
     }
     
 //    private func recentlyViewedItemCell(data: RecentlyViewedModel) -> CellViewModel {
 //        return CellViewModel(cellIdentifier: RecentlyViewedItemCell.identifier,
 //                             userData: [.data: data])
 //    }
-    
-}
-
-// MARk - UITableView Delegate
-extension FavouritesDataSource: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == 1 {
-           return CGSize(width: 268, height: 392)
-        }
-        
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-    }
-    
     
 }

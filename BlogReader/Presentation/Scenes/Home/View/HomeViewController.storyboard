@@ -16,17 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T76-a9-Laj">
-                                <rect key="frame" x="0.0" y="130" width="414" height="683"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ata-tN-cP4">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NdB-PX-JVU">
                                 <rect key="frame" x="17" y="64" width="380" height="46"/>
                                 <constraints>
@@ -34,23 +23,27 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DJF-AB-irH">
+                                <rect key="frame" x="0.0" y="130" width="414" height="683"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kus-dR-0rD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="T76-a9-Laj" firstAttribute="top" secondItem="NdB-PX-JVU" secondAttribute="bottom" constant="20" id="Azu-Yc-jGu"/>
-                            <constraint firstItem="T76-a9-Laj" firstAttribute="trailing" secondItem="kus-dR-0rD" secondAttribute="trailing" id="TLQ-76-VMO"/>
+                            <constraint firstItem="DJF-AB-irH" firstAttribute="top" secondItem="NdB-PX-JVU" secondAttribute="bottom" constant="20" id="HyG-mM-ZCU"/>
                             <constraint firstItem="NdB-PX-JVU" firstAttribute="leading" secondItem="kus-dR-0rD" secondAttribute="leading" constant="17" id="Vgs-na-tyJ"/>
-                            <constraint firstItem="T76-a9-Laj" firstAttribute="leading" secondItem="kus-dR-0rD" secondAttribute="leading" id="e6g-1n-Cgw"/>
+                            <constraint firstItem="kus-dR-0rD" firstAttribute="trailing" secondItem="DJF-AB-irH" secondAttribute="trailing" id="dR0-ej-hCh"/>
+                            <constraint firstItem="DJF-AB-irH" firstAttribute="leading" secondItem="kus-dR-0rD" secondAttribute="leading" id="eEm-H9-7sq"/>
                             <constraint firstItem="NdB-PX-JVU" firstAttribute="top" secondItem="kus-dR-0rD" secondAttribute="top" constant="20" id="ntM-ZT-sCk"/>
+                            <constraint firstItem="kus-dR-0rD" firstAttribute="bottom" secondItem="DJF-AB-irH" secondAttribute="bottom" id="qDk-Ca-Rch"/>
                             <constraint firstItem="NdB-PX-JVU" firstAttribute="trailing" secondItem="kus-dR-0rD" secondAttribute="trailing" constant="-17" id="qMT-CR-rJi"/>
-                            <constraint firstItem="T76-a9-Laj" firstAttribute="bottom" secondItem="kus-dR-0rD" secondAttribute="bottom" id="rDi-rf-9Cw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="hFg-AB-Rj2"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="collectionView" destination="T76-a9-Laj" id="nLz-V0-bK2"/>
+                        <outlet property="tableView" destination="DJF-AB-irH" id="7R0-ox-h28"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jmD-qG-oTZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

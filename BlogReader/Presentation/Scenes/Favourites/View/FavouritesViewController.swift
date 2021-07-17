@@ -11,19 +11,19 @@ class FavouritesViewController: BaseViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var dataSource: FavouritesDataSource!
+    private var dataSource: FavouritesCollectionViewDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.registerNib(class: FavouriteCategoryItemCell.self)
-        collectionView.registerNib(class: FavouriteCell.self)
+        collectionView.registerNib(class: FavouriteItemCell.self)
 
         configureDataSource()
     }
     
     private func configureDataSource() {
-        dataSource = FavouritesDataSource(with: collectionView)
+        dataSource = FavouritesCollectionViewDataSource(with: collectionView)
         dataSource.refresh()
     }
 
