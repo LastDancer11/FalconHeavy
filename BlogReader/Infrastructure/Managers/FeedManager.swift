@@ -11,7 +11,7 @@ protocol FeedManagerProtocol: AnyObject {
     func fetchFeed(completion: @escaping ((Result<[FeedModel], Error>) -> Void))
 }
 
-class RecentBlogManager: FeedManagerProtocol {
+class FeedManager: FeedManagerProtocol {
     
     func fetchFeed(completion: @escaping ((Result<[FeedModel], Error>) -> Void)) {
         
