@@ -12,6 +12,8 @@ class FeedCategoryCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var dataSource: FeedCollectionViewDataSource!
+    private var viewModel: FeedViewModelProtocol!
+    private var categoryManager: CategoryManagerProtocol!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +30,9 @@ class FeedCategoryCell: UITableViewCell {
     }
     
     func configure() {
-        dataSource = FeedCollectionViewDataSource(with: collectionView)
+        categoryManager = CategoryManager()
+        viewModel = FeedViewModel(categoryManager: categoryManager)
+        dataSource = FeedCollectionViewDataSource(with: collectionView, viewModel: viewModel)
         dataSource.refreshCategoryItems()
     }
     

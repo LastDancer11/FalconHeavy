@@ -17,17 +17,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tHM-ja-RDX">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="685"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xT5-Qq-zg7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixW-jd-Duw">
+                                        <rect key="frame" x="16" y="74" width="25" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="GSg-KE-4Mu"/>
+                                            <constraint firstAttribute="width" constant="25" id="sP5-oU-4oa"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="ic-menu"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Feeds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXa-lf-vUg">
+                                        <rect key="frame" x="154.5" y="69" width="105" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Wcp-XC-uq8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVI-wY-Hbg">
+                                        <rect key="frame" x="373" y="71" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="KD8-aG-FOZ"/>
+                                            <constraint firstAttribute="height" constant="25" id="kZt-eM-xI2"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="ic-search"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.30588235289999999" green="0.0" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="EXa-lf-vUg" secondAttribute="bottom" constant="16" id="CIk-k0-7gc"/>
+                                    <constraint firstAttribute="trailing" secondItem="MVI-wY-Hbg" secondAttribute="trailing" constant="16" id="Dft-Kl-151"/>
+                                    <constraint firstItem="ixW-jd-Duw" firstAttribute="leading" secondItem="xT5-Qq-zg7" secondAttribute="leading" constant="16" id="EK2-jT-Szo"/>
+                                    <constraint firstAttribute="bottom" secondItem="MVI-wY-Hbg" secondAttribute="bottom" constant="14" id="F71-fp-BFa"/>
+                                    <constraint firstAttribute="bottom" secondItem="ixW-jd-Duw" secondAttribute="bottom" constant="20" symbolic="YES" id="dnY-2D-SyW"/>
+                                    <constraint firstAttribute="height" constant="110" id="gG8-dW-Wyt"/>
+                                    <constraint firstItem="EXa-lf-vUg" firstAttribute="centerX" secondItem="xT5-Qq-zg7" secondAttribute="centerX" id="y3R-0N-jfQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="M0V-FS-AE7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tHM-ja-RDX" firstAttribute="top" secondItem="M0V-FS-AE7" secondAttribute="top" id="9SU-rG-B8c"/>
-                            <constraint firstItem="M0V-FS-AE7" firstAttribute="trailing" secondItem="tHM-ja-RDX" secondAttribute="trailing" id="YCS-GJ-Aut"/>
-                            <constraint firstItem="M0V-FS-AE7" firstAttribute="bottom" secondItem="tHM-ja-RDX" secondAttribute="bottom" id="mnV-OH-yMf"/>
-                            <constraint firstItem="tHM-ja-RDX" firstAttribute="leading" secondItem="M0V-FS-AE7" secondAttribute="leading" id="zWa-n3-6SY"/>
+                            <constraint firstItem="tHM-ja-RDX" firstAttribute="top" secondItem="xT5-Qq-zg7" secondAttribute="bottom" constant="18" id="3hb-kb-qcg"/>
+                            <constraint firstItem="xT5-Qq-zg7" firstAttribute="trailing" secondItem="M0V-FS-AE7" secondAttribute="trailing" id="AFq-by-Ibz"/>
+                            <constraint firstItem="tHM-ja-RDX" firstAttribute="leading" secondItem="M0V-FS-AE7" secondAttribute="leading" id="SRd-fd-PkG"/>
+                            <constraint firstItem="tHM-ja-RDX" firstAttribute="bottom" secondItem="M0V-FS-AE7" secondAttribute="bottom" id="XLw-sQ-5cK"/>
+                            <constraint firstItem="xT5-Qq-zg7" firstAttribute="top" secondItem="CLf-k0-3H0" secondAttribute="top" id="ZPl-qa-b8M"/>
+                            <constraint firstItem="tHM-ja-RDX" firstAttribute="trailing" secondItem="M0V-FS-AE7" secondAttribute="trailing" id="dIi-Ak-6zI"/>
+                            <constraint firstItem="xT5-Qq-zg7" firstAttribute="leading" secondItem="M0V-FS-AE7" secondAttribute="leading" id="iRV-nC-WJ1"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="folder" catalog="system" id="Z1L-Vg-29d"/>
@@ -38,11 +81,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="znu-eH-XTc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159" y="88"/>
+            <point key="canvasLocation" x="157.97101449275362" y="87.723214285714278"/>
         </scene>
     </scenes>
     <resources>
         <image name="folder" catalog="system" width="128" height="97"/>
+        <image name="ic-menu" width="26" height="17"/>
+        <image name="ic-search" width="26" height="26"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -22,7 +22,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2Y-9e-zAO">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icImage" translatesAutoresizingMaskIntoConstraints="NO" id="yHw-l8-hHU">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kingfisher-10.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yHw-l8-hHU">
                                         <rect key="frame" x="358" y="40" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="LwB-MM-UkG"/>
@@ -101,7 +101,7 @@
     </scenes>
     <resources>
         <image name="ic-menu" width="26" height="17"/>
-        <image name="icImage" width="37" height="37"/>
+        <image name="kingfisher-10.jpg" width="250" height="250"/>
         <image name="seaImage" width="375" height="667"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">

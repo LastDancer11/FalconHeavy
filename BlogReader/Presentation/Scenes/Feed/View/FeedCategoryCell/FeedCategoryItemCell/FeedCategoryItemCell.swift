@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FeedCategoryItemCell: UICollectionViewCell {
+class FeedCategoryItemCell: UICollectionViewCell, CollectionCellConfigurable {
 
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryView: UIView!
@@ -15,6 +15,16 @@ class FeedCategoryItemCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func configure(with item: CellItem) {
+        guard let model = item as? CellViewModel,
+              let data = model.userData[.data] as? CategoryModel else { return }
+        
+        categoryNameLabel.text = data.title
+        
+        categoryNameLabel.textColor = .gray
+        
     }
 
 }

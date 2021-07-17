@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bdg-jp-Szg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="130" width="414" height="683"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iFA-2C-bCo">
                                     <size key="itemSize" width="128" height="128"/>
@@ -27,14 +27,59 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kz3-PT-IUl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbw-uh-xuz">
+                                        <rect key="frame" x="20" y="69" width="25" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="DpF-Qs-87w"/>
+                                            <constraint firstAttribute="width" constant="25" id="U9D-YZ-GKT"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="moY-Wg-qp4"/>
+                                            <constraint firstAttribute="height" constant="21" id="wRh-tD-KSX"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="ic-backArrow"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-tD-Wfv">
+                                        <rect key="frame" x="369" y="65" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="1Bj-Zp-djh"/>
+                                            <constraint firstAttribute="height" constant="25" id="ewO-ee-sVr"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="ic-search"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today’s News" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUo-m2-nK7">
+                                        <rect key="frame" x="135" y="65" width="144.5" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="DBq-Nj-HH6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.32156862749999998" green="0.33333333329999998" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="xUo-m2-nK7" firstAttribute="centerX" secondItem="Kz3-PT-IUl" secondAttribute="centerX" id="5gV-Ja-7S0"/>
+                                    <constraint firstAttribute="bottom" secondItem="7HT-tD-Wfv" secondAttribute="bottom" constant="20" symbolic="YES" id="COF-yi-wTq"/>
+                                    <constraint firstItem="fbw-uh-xuz" firstAttribute="leading" secondItem="Kz3-PT-IUl" secondAttribute="leading" constant="20" symbolic="YES" id="EWd-sU-Bln"/>
+                                    <constraint firstAttribute="bottom" secondItem="fbw-uh-xuz" secondAttribute="bottom" constant="20" symbolic="YES" id="IB6-wg-EBx"/>
+                                    <constraint firstAttribute="trailing" secondItem="7HT-tD-Wfv" secondAttribute="trailing" constant="20" symbolic="YES" id="PlK-hb-rj9"/>
+                                    <constraint firstAttribute="height" constant="110" id="gB3-M9-5Ka"/>
+                                    <constraint firstAttribute="bottom" secondItem="xUo-m2-nK7" secondAttribute="bottom" constant="20" symbolic="YES" id="qNW-wj-LIS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ket-Mf-FNM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bdg-jp-Szg" firstAttribute="top" secondItem="Ket-Mf-FNM" secondAttribute="top" id="79D-Tf-LxT"/>
-                            <constraint firstItem="Ket-Mf-FNM" firstAttribute="trailing" secondItem="bdg-jp-Szg" secondAttribute="trailing" id="87k-xA-fCb"/>
-                            <constraint firstItem="Ket-Mf-FNM" firstAttribute="bottom" secondItem="bdg-jp-Szg" secondAttribute="bottom" id="OTJ-9g-y3e"/>
-                            <constraint firstItem="bdg-jp-Szg" firstAttribute="leading" secondItem="Ket-Mf-FNM" secondAttribute="leading" id="ucd-Iw-5SF"/>
+                            <constraint firstItem="Kz3-PT-IUl" firstAttribute="trailing" secondItem="Ket-Mf-FNM" secondAttribute="trailing" id="67W-UQ-zPg"/>
+                            <constraint firstItem="bdg-jp-Szg" firstAttribute="leading" secondItem="Ket-Mf-FNM" secondAttribute="leading" id="E9y-kN-vhL"/>
+                            <constraint firstItem="bdg-jp-Szg" firstAttribute="top" secondItem="Kz3-PT-IUl" secondAttribute="bottom" constant="20" id="Fjc-2d-CwY"/>
+                            <constraint firstItem="bdg-jp-Szg" firstAttribute="bottom" secondItem="Ket-Mf-FNM" secondAttribute="bottom" id="FtI-qJ-Kw3"/>
+                            <constraint firstItem="Kz3-PT-IUl" firstAttribute="leading" secondItem="Ket-Mf-FNM" secondAttribute="leading" id="MOq-nq-APU"/>
+                            <constraint firstItem="Kz3-PT-IUl" firstAttribute="top" secondItem="AXs-gi-iPX" secondAttribute="top" id="PlS-Sa-cb9"/>
+                            <constraint firstItem="bdg-jp-Szg" firstAttribute="trailing" secondItem="Ket-Mf-FNM" secondAttribute="trailing" id="SKM-Rw-s0f"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="mS1-i5-DHc"/>
@@ -46,10 +91,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMZ-eq-AVU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="238" y="121"/>
+            <point key="canvasLocation" x="237.68115942028987" y="120.53571428571428"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic-backArrow" width="27" height="22"/>
+        <image name="ic-search" width="26" height="26"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -18,19 +18,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Related Stories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WV-4k-G0j">
-                        <rect key="frame" x="0.0" y="10" width="115" height="21"/>
+                        <rect key="frame" x="20" y="10" width="115" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="qBI-U9-8bN">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="qBI-U9-8bN">
                         <rect key="frame" x="0.0" y="69" width="342" height="141"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="141" id="DYu-Nz-AzU"/>
                             <constraint firstAttribute="width" constant="342" id="Mik-pF-zn9"/>
                         </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fgS-hF-Ncv">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fgS-hF-Ncv">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -38,28 +38,29 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UA6-fF-n5g">
-                        <rect key="frame" x="0.0" y="49" width="4" height="4"/>
+                        <rect key="frame" x="20" y="49" width="4" height="4"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="4" id="RzV-Nl-1qK"/>
                             <constraint firstAttribute="width" constant="4" id="WyX-Xa-JHf"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLm-IM-u4B">
-                        <rect key="frame" x="7" y="47" width="17" height="8"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Science" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLm-IM-u4B">
+                        <rect key="frame" x="27" y="47" width="25" height="8"/>
                         <fontDescription key="fontDescription" type="system" pointSize="6"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="3WV-4k-G0j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1zv-Au-lCc"/>
                     <constraint firstItem="3WV-4k-G0j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="28Y-l2-4im"/>
                     <constraint firstItem="KLm-IM-u4B" firstAttribute="centerY" secondItem="UA6-fF-n5g" secondAttribute="centerY" id="Kko-D7-OBi"/>
+                    <constraint firstItem="3WV-4k-G0j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="NrU-2h-yIU"/>
                     <constraint firstAttribute="bottom" secondItem="qBI-U9-8bN" secondAttribute="bottom" id="REf-EE-2LB"/>
                     <constraint firstItem="qBI-U9-8bN" firstAttribute="top" secondItem="KLm-IM-u4B" secondAttribute="bottom" constant="14" id="RY4-6V-Vxl"/>
-                    <constraint firstItem="UA6-fF-n5g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TZz-fr-gkd"/>
+                    <constraint firstItem="UA6-fF-n5g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="TZz-fr-gkd"/>
                     <constraint firstAttribute="trailing" secondItem="qBI-U9-8bN" secondAttribute="trailing" id="dKf-S7-Rp7"/>
+                    <constraint firstItem="UA6-fF-n5g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="kZv-ry-3RI"/>
                     <constraint firstItem="KLm-IM-u4B" firstAttribute="leading" secondItem="UA6-fF-n5g" secondAttribute="trailing" constant="3" id="lfq-71-L3J"/>
                     <constraint firstItem="UA6-fF-n5g" firstAttribute="top" secondItem="3WV-4k-G0j" secondAttribute="bottom" constant="18" id="lnC-hR-68u"/>
                     <constraint firstItem="qBI-U9-8bN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nno-G3-Fnp"/>

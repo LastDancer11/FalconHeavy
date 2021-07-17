@@ -28,9 +28,10 @@
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8i4-sL-y8F">
                         <rect key="frame" x="0.0" y="31" width="24" height="4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="24" id="Xt3-w8-3uW"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="4" id="mFY-0b-bZq"/>
                             <constraint firstAttribute="height" constant="4" id="sTb-Ph-qk1"/>
                         </constraints>
                     </view>
@@ -38,9 +39,13 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="8i4-sL-y8F" firstAttribute="top" secondItem="tAW-Xu-Mag" secondAttribute="bottom" constant="1" id="2Hz-gp-Tkg"/>
                 <constraint firstItem="8i4-sL-y8F" firstAttribute="top" secondItem="tAW-Xu-Mag" secondAttribute="bottom" constant="1" id="ELi-Ih-vzP"/>
+                <constraint firstAttribute="bottom" secondItem="8i4-sL-y8F" secondAttribute="bottom" id="GoT-R3-kjn"/>
                 <constraint firstItem="8i4-sL-y8F" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Nbu-el-hqZ"/>
                 <constraint firstItem="tAW-Xu-Mag" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="PUx-n7-cVw"/>
+                <constraint firstItem="tAW-Xu-Mag" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="i3F-a1-is8"/>
+                <constraint firstItem="tAW-Xu-Mag" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oid-lL-V8f"/>
                 <constraint firstItem="tAW-Xu-Mag" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pnT-G8-p9M"/>
             </constraints>
             <size key="customSize" width="212" height="35"/>
@@ -52,8 +57,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

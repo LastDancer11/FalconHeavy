@@ -12,10 +12,13 @@ final class FeedCollectionViewDataSource: BaseCollectionViewDataSource {
     // MARK: - Variables
     private var viewModel: FeedViewModelProtocol!
     
-    init(with collectionView: UICollectionView) {
+    init(with collectionView: UICollectionView, viewModel: FeedViewModelProtocol) {
         super.init()
         
         self.collectionView = collectionView
+        self.collectionView?.delegate = self
+        
+        self.viewModel = viewModel
         
         singleSectionModels = []
     }
@@ -23,19 +26,38 @@ final class FeedCollectionViewDataSource: BaseCollectionViewDataSource {
     // MARK: - Table View Setuper
     func refreshCategoryItems() {
         
-        for _ in 0...5 {
-            singleSectionModels.append(feedCategoryItemCell)
+        viewModel.fetchCategories { [unowned self] result in
+            switch result {
+            case .success(let categories):
+                DispatchQueue.main.async {
+                    for category in categories {
+                        self.singleSectionModels.append(self.feedCategoryItemCell(data: category))
+                    }
+                    self.collectionView?.reloadData()
+                }
+            case .failure(let err):
+                print(err)
+            }
         }
-        
-        collectionView?.reloadData()
+    
     }
     
     func refreshRelatedStoryItems() {
-        for _ in 0...5 {
-            singleSectionModels.append(relatedStoryItemCell)
+        
+        viewModel.fetchRelatedStories { [unowned self] result in
+            switch result {
+            case .success(let relatedStories):
+                DispatchQueue.main.async {
+                    for relatedStory in relatedStories {
+                        self.singleSectionModels.append(self.relatedStoryItemCell(data: relatedStory))
+                    }
+                    self.collectionView?.reloadData()
+                }
+            case .failure(let err):
+                print(err)
+            }
         }
         
-        collectionView?.reloadData()
     }
     
 }
@@ -43,23 +65,22 @@ final class FeedCollectionViewDataSource: BaseCollectionViewDataSource {
 // MARK: - Cell Registration
 private extension FeedCollectionViewDataSource {
     
-    private var feedCategoryItemCell: CellViewModel {
-        return CellViewModel(cellIdentifier: FeedCategoryItemCell.identifier)
+    private func feedCategoryItemCell(data: CategoryModel) -> CellViewModel {
+        return CellViewModel(cellIdentifier: FeedCategoryItemCell.identifier,
+                                userData: [.data: data])
     }
     
-    private var relatedStoryItemCell: CellViewModel {
-        return CellViewModel(cellIdentifier: RelatedStoryItemCell.identifier)
+    private func relatedStoryItemCell(data: RelatedStoryModel) -> CellViewModel {
+        return CellViewModel(cellIdentifier: RelatedStoryItemCell.identifier,
+                             userData: [.data: data])
     }
-    
-//    private func recentlyViewedItemCell(data: RecentlyViewedModel) -> CellViewModel {
-//        return CellViewModel(cellIdentifier: RecentlyViewedItemCell.identifier,
-//                             userData: [.data: data])
-//    }
     
 }
 
 // MARK - UICollection View Flow Layout Delegate
 extension FeedCollectionViewDataSource: UICollectionViewDelegateFlowLayout {
-   
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    }
 }
 

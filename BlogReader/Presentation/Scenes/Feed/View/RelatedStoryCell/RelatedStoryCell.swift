@@ -12,6 +12,8 @@ class RelatedStoryCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var dataSource: FeedCollectionViewDataSource!
+    private var viewModel: FeedViewModelProtocol!
+    private var relatedStoriesManager: RelatedStoryManagerProtocol!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +31,9 @@ class RelatedStoryCell: UITableViewCell {
     }
     
     func configure() {
-        dataSource = FeedCollectionViewDataSource(with: collectionView)
+        relatedStoriesManager = RelatedStoryManager()
+        viewModel = FeedViewModel(relatedStoriesManager: relatedStoriesManager)
+        dataSource = FeedCollectionViewDataSource(with: collectionView, viewModel: viewModel)
         dataSource.refreshRelatedStoryItems()
     }
     
