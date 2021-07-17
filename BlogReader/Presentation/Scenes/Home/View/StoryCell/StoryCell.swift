@@ -6,19 +6,18 @@
 //
 
 import UIKit
+import Kingfisher
 
-class StoryCell: UITableViewCell {
+class StoryCell: UITableViewCell, TableCellConfigurable {
 
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    private var dataSource: HomeCollectionViewDataSource!
+    @IBOutlet weak var storyImageView: UIImageView!
+    @IBOutlet weak var bloggerImageView: UIImageView!
+    @IBOutlet weak var storyNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        collectionView.registerNib(class: StoryItemCell.self)
-        
-        configure()
+        setupLayout()
         
     }
 
@@ -28,9 +27,19 @@ class StoryCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure() {
-        dataSource = HomeCollectionViewDataSource(with: collectionView)
-        dataSource.refreshStoryCellItems()
+    private func setupLayout() {
+        storyImageView.layer.cornerRadius = 20
+        bloggerImageView.layer.cornerRadius =  bloggerImageView.frame.width / 2
+        bloggerImageView.layer.borderWidth = 2
+        bloggerImageView.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    func configure(with item: CellItem){
+        guard let model = item as? CellViewModel,
+              let data = model.userData[.data] as? StoryModel else { return }
+        storyImageView.kf.setImage( with: URL(string: data.image ?? ""))
+        bloggerImageView.kf.setImage( with: URL(string: data.smallImage ?? ""))
+        storyNameLabel.text = data.title
     }
     
 }

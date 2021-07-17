@@ -15,11 +15,26 @@
                     <view key="view" contentMode="scaleToFill" id="CLf-k0-3H0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tHM-ja-RDX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="M0V-FS-AE7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tHM-ja-RDX" firstAttribute="top" secondItem="M0V-FS-AE7" secondAttribute="top" id="9SU-rG-B8c"/>
+                            <constraint firstItem="M0V-FS-AE7" firstAttribute="trailing" secondItem="tHM-ja-RDX" secondAttribute="trailing" id="YCS-GJ-Aut"/>
+                            <constraint firstItem="M0V-FS-AE7" firstAttribute="bottom" secondItem="tHM-ja-RDX" secondAttribute="bottom" id="mnV-OH-yMf"/>
+                            <constraint firstItem="tHM-ja-RDX" firstAttribute="leading" secondItem="M0V-FS-AE7" secondAttribute="leading" id="zWa-n3-6SY"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="folder" catalog="system" id="Z1L-Vg-29d"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="tHM-ja-RDX" id="fb4-lG-V1w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="znu-eH-XTc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

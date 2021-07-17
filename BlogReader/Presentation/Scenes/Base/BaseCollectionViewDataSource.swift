@@ -52,12 +52,14 @@ extension BaseCollectionViewDataSource: UICollectionViewDataSource {
         switch cellViewModel.cellIdentifier {
         case CategoryItemCell.identifier:
             cell = collectionView.deque(CategoryItemCell.self, for: indexPath)
-        case StoryItemCell.identifier:
-            cell = collectionView.deque(StoryItemCell.self, for: indexPath)
-        case FavouriteCategoryItemCell.identifier:
-            cell = collectionView.deque(FavouriteCategoryItemCell.self, for: indexPath)
-        case FavouriteItemCell.identifier:
-            cell = collectionView.deque(FavouriteItemCell.self, for: indexPath)
+        case FavouritesCell.identifier:
+            cell = collectionView.deque(FavouritesCell.self, for: indexPath)
+        case NewsCell.identifier:
+            cell = collectionView.deque(NewsCell.self, for: indexPath)
+        case FeedCategoryItemCell.identifier:
+            cell = collectionView.deque(FeedCategoryItemCell.self, for: indexPath)
+        case RelatedStoryItemCell.identifier:
+            cell = collectionView.deque(RelatedStoryItemCell.self, for: indexPath)
         default:
             if let _cell = initCustomCollectionViewCell(for: indexPath, with: cellViewModel.cellIdentifier) {
                 cell = _cell

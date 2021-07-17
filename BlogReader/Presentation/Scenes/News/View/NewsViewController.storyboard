@@ -15,12 +15,34 @@
                     <view key="view" contentMode="scaleToFill" id="AXs-gi-iPX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bdg-jp-Szg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iFA-2C-bCo">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ket-Mf-FNM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bdg-jp-Szg" firstAttribute="top" secondItem="Ket-Mf-FNM" secondAttribute="top" id="79D-Tf-LxT"/>
+                            <constraint firstItem="Ket-Mf-FNM" firstAttribute="trailing" secondItem="bdg-jp-Szg" secondAttribute="trailing" id="87k-xA-fCb"/>
+                            <constraint firstItem="Ket-Mf-FNM" firstAttribute="bottom" secondItem="bdg-jp-Szg" secondAttribute="bottom" id="OTJ-9g-y3e"/>
+                            <constraint firstItem="bdg-jp-Szg" firstAttribute="leading" secondItem="Ket-Mf-FNM" secondAttribute="leading" id="ucd-Iw-5SF"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="mS1-i5-DHc"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="bdg-jp-Szg" id="bsa-Pm-nhl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMZ-eq-AVU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

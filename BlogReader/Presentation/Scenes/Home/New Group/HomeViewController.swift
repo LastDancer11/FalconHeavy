@@ -11,22 +11,34 @@ class HomeViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    private var viewModel: HomeViewModelProtocol!
     private var dataSource: HomeTableViewDataSource!
+    private var storyManager: StoryManagerProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerNib(class: CategoryCell.self)
-        tableView.registerNib(class: StoryCell.self)
+        setupTableView()
         
         configureDataSource()
         
     }
     
+    private func setupTableView() {
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
+        tableView.registerNib(class: CategoryCell.self)
+        tableView.registerNib(class: StoryCell.self)
+    }
+    
     private func configureDataSource() {
-        dataSource = HomeTableViewDataSource(with: tableView)
+        storyManager = StoryManager()
+        viewModel = HomeViewModel(storyManager: storyManager)
+        dataSource = HomeTableViewDataSource(with: tableView, viewModel: viewModel)
         dataSource.refresh()
     }
+    
+   
 
 
 }

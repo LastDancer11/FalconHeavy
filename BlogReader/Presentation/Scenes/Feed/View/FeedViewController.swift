@@ -8,22 +8,24 @@
 import UIKit
 
 class FeedViewController: BaseViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    private var dataSource: FeedTableViewDataSource!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.registerNib(class: FeedCell.self)
+        tableView.registerNib(class: FeedCategoryCell.self)
+        tableView.registerNib(class: RelatedStoryCell.self)
 
-        // Do any additional setup after loading the view.
+        configureDataSource()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureDataSource() {
+        dataSource = FeedTableViewDataSource(with: tableView)
+        dataSource.refresh()
     }
-    */
 
 }

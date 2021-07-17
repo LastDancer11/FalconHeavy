@@ -11,9 +11,14 @@ class FeedCategoryCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var dataSource: FeedCollectionViewDataSource!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        collectionView.registerNib(class: FeedCategoryItemCell.self)
+        
+        configure()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -21,5 +26,12 @@ class FeedCategoryCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configure() {
+        dataSource = FeedCollectionViewDataSource(with: collectionView)
+        dataSource.refreshCategoryItems()
+    }
+    
+    
     
 }

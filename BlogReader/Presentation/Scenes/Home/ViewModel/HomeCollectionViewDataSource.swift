@@ -12,87 +12,42 @@ final class HomeCollectionViewDataSource: BaseCollectionViewDataSource {
     // MARK: - Variables
     private var viewModel: HomeViewModelProtocol!
     
-    init(with collectionView: UICollectionView) {
+    // MARK: - Inits
+    init(with collectionView: UICollectionView, viewModel: HomeViewModelProtocol) {
         super.init()
         
         self.collectionView = collectionView
+        self.viewModel = viewModel
         
         singleSectionModels = []
     }
     
-    // MARK: - Table View Setuper
+    // MARK: - Collection View Setuper
     func refreshCategoryItems() {
-        
-        for _ in 0...5 {
-            singleSectionModels.append(categoryItemCell)
+        viewModel.fetchCategories { [unowned self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let categories):
+                    for category in categories {
+                        self.singleSectionModels.append(self.categoryItemCell(data: category))
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+                
+                self.collectionView?.reloadData()
+            }
         }
-        
-        collectionView?.reloadData()
     }
-    
-    func refreshStoryCellItems() {
-        for _ in 0...5 {
-            singleSectionModels.append(storyItemCell)
-        }
-        
-        collectionView?.reloadData()
-    }
-    
-    // MARK: - Collection View Setupers
-    
-//    func setupCategoryItems() {
-//
-//        HomeDataSource.viewModel.fetchCategories { [unowned self] fetchedCategories in
-//            let categories = fetchedCategories
-//            DispatchQueue.main.async {
-//                for category in categories {
-//                    self.singleCollectionSectionModels.append(self.categoryItemCell(data: category))
-//                }
-//
-//                self.collectionView?.reloadData()
-//            }
-//
-//        }
-//
-//    }
-    
-//    func setupRecentlyViewedItems() {
-//
-//        HomeDataSource.viewModel.fetchRecentlyViewed { [unowned self] fetchedData in
-//            let recentlyViewed = fetchedData
-//
-//            DispatchQueue.main.async {
-//                for recently in recentlyViewed {
-//                    self.singleCollectionSectionModels.append(self.recentlyViewedItemCell(data: recently))
-//                }
-//
-//                self.collectionView?.reloadData()
-//            }
-//
-//        }
-//    }
     
 }
 
 // MARK: - Cell Registration
 private extension HomeCollectionViewDataSource {
     
-    private var categoryItemCell: CellViewModel {
-        return CellViewModel(cellIdentifier: CategoryItemCell.identifier)
+    private func categoryItemCell(data: CategoryModel) -> CellViewModel {
+        return CellViewModel(cellIdentifier: CategoryItemCell.identifier,
+                             userData: [.data: data])
     }
     
-    private var storyItemCell: CellViewModel {
-        return CellViewModel(cellIdentifier: StoryItemCell.identifier)
-    }
-    
-//    private func recentlyViewedItemCell(data: RecentlyViewedModel) -> CellViewModel {
-//        return CellViewModel(cellIdentifier: RecentlyViewedItemCell.identifier,
-//                             userData: [.data: data])
-//    }
-    
-}
-
-// MARk - UITableView Delegate
-extension HomeCollectionViewDataSource: UICollectionViewDelegateFlowLayout {
-   
 }

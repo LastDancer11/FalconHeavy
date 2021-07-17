@@ -12,61 +12,43 @@ final class HomeTableViewDataSource: BaseTableViewDataSource {
     // MARK: - Variables
     private var viewModel: HomeViewModelProtocol!
     
-    init(with tableView: UITableView) {
+    init(with tableView: UITableView, viewModel: HomeViewModelProtocol) {
         super.init()
         
         self.tableView = tableView
+        self.tableView?.delegate = self
         
-        multiSectionModels = []
+        self.viewModel = viewModel
+        
+        singleSectionModels = []
     }
     
     // MARK: - Table View Setuper
     override func refresh() {
-        multiSectionModels = [[], []]
         
-        
-        multiSectionModels[0].append(categoryCell)
-        
-        multiSectionModels[1].append(storyCell)
-        
-      
+        singleSectionModels.append(categoryCell)
+                
+        refreshStories()
         
         tableView?.reloadData()
     }
     
-    // MARK: - Collection View Setupers
-    
-//    func setupCategoryItems() {
-//
-//        HomeDataSource.viewModel.fetchCategories { [unowned self] fetchedCategories in
-//            let categories = fetchedCategories
-//            DispatchQueue.main.async {
-//                for category in categories {
-//                    self.singleCollectionSectionModels.append(self.categoryItemCell(data: category))
-//                }
-//
-//                self.collectionView?.reloadData()
-//            }
-//
-//        }
-//
-//    }
-    
-//    func setupRecentlyViewedItems() {
-//
-//        HomeDataSource.viewModel.fetchRecentlyViewed { [unowned self] fetchedData in
-//            let recentlyViewed = fetchedData
-//
-//            DispatchQueue.main.async {
-//                for recently in recentlyViewed {
-//                    self.singleCollectionSectionModels.append(self.recentlyViewedItemCell(data: recently))
-//                }
-//
-//                self.collectionView?.reloadData()
-//            }
-//
-//        }
-//    }
+    func refreshStories() {
+        viewModel.fetchStories { [unowned self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let stories):
+                    for story in stories {
+                        self.singleSectionModels.append(self.storyCell(data: story))
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+                
+                self.tableView?.reloadData()
+            }
+        }
+    }
     
 }
 
@@ -77,13 +59,13 @@ private extension HomeTableViewDataSource {
         return CellViewModel(cellIdentifier: CategoryCell.identifier)
     }
     
-    private var storyCell: CellViewModel {
-        return CellViewModel(cellIdentifier: StoryCell.identifier)
+    private func storyCell(data: StoryModel) -> CellViewModel {
+        return CellViewModel(cellIdentifier: StoryCell.identifier,
+                             userData: [.data: data])
     }
     
-//    private func recentlyViewedItemCell(data: RecentlyViewedModel) -> CellViewModel {
-//        return CellViewModel(cellIdentifier: RecentlyViewedItemCell.identifier,
-//                             userData: [.data: data])
-//    }
+}
+
+extension HomeTableViewDataSource: UITableViewDelegate {
     
 }

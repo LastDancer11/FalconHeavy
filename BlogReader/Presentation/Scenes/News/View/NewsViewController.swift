@@ -9,21 +9,26 @@ import UIKit
 
 class NewsViewController: BaseViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    private var dataSource: NewsCollectionViewDataSource!
+    private var viewModel: NewsViewModelProtocol!
+    private var newsManager: NewsManagerProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        collectionView.registerNib(class: NewsCell.self)
+        
+        configureDataSource()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureDataSource() {
+        newsManager = NewsManager()
+        viewModel = NewsViewModel(newsManager: newsManager)
+        dataSource = NewsCollectionViewDataSource(with: collectionView, viewModel: viewModel)
+        dataSource.refresh()
     }
-    */
+    
 
 }
