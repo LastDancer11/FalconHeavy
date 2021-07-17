@@ -9,9 +9,23 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    private var dataSource: HomeDataSource!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        collectionView.registerNib(class: CategoryItemCell.self)
+        collectionView.registerNib(class: StoryItemCell.self)
+        
+        configureDataSource()
+        
+    }
+    
+    private func configureDataSource() {
+        dataSource = HomeDataSource(with: collectionView)
+        dataSource.refresh()
     }
 
 

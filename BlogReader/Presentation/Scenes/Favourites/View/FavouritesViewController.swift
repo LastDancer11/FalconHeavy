@@ -9,21 +9,22 @@ import UIKit
 
 class FavouritesViewController: BaseViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    private var dataSource: FavouritesDataSource!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.registerNib(class: FavouriteCategoryItemCell.self)
+        collectionView.registerNib(class: FavouriteCell.self)
 
-        // Do any additional setup after loading the view.
+        configureDataSource()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func configureDataSource() {
+        dataSource = FavouritesDataSource(with: collectionView)
+        dataSource.refresh()
     }
-    */
 
 }
